@@ -1,0 +1,28 @@
+# Local user state
+*.kicad_prl
+fp-info-cache
+.history/
+*-backups/
+
+# Locks, autosaves, temp
+*.lck
+~*.*
+_autosave-*
+*.tmp
+*.bak
+*.bck
+*.000
+*-save.kicad_pcb
+*-save.pro
+*.kicad_pcb-bak
+*.kicad_sch-bak
+
+# Regenerable exchange files
+*.net
+*.cmp
+*.dsn
+*.ses
+
+# Jobset outputs
+/out/
+/fab/
