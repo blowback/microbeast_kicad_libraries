@@ -79,3 +79,47 @@ Then fix each board's `sym-lib-table` / `fp-lib-table` and the model path in `SN
 ## .gitignore
 
 The `.gitignore` in here can be used for new Kicad board repos.
+
+# Bootstrapping a new project
+
+1. Create a repo for it.
+2. Create a working dir for it.
+3. Copy this dir's .gitnore into the new working copy.
+4. add this repo as a submodule:
+
+```
+git submodule add git@github.com:blowback/beast-kicad-lib.git lib
+git commit -m "Add KiCad library as submodule"
+```
+
+(If the board is in a subfolder, the path is `blah/pcb/lib` instead of `lib`. It should still be next to the `.kicad_pro`.)
+
+5. clone:
+
+```
+git clone --recurse-submodules ...
+
+# OR, after a plain clone: 
+
+git submodule update --init
+```
+
+6. edit:
+
+```
+cd lib
+git switch main          # get off the detached HEAD first
+# ...edit the footprint in KiCad...
+git commit -am "Fix SNES socket model path"
+git push
+cd ..
+git commit -am "Bump lib"   # records the new library commit in the board repo
+```
+
+Slightly complex, because `lib/` checks out a **specific commit**. Forget the `git switch main` and your changes are left on a detached HEAD. Forget the final `git commit` the board's repo still points at the old version.
+
+7. pulling library updates into a board: 
+
+```
+git submodule update --remote lib
+```
