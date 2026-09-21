@@ -271,7 +271,7 @@
 		(uuid "9d979ded-3ddf-432e-a9d1-0130c345256e")
 	)
 	(embedded_fonts no)
-	(model "/home/ant/src/microbeast/PCBs/libraries/models/snes_joypad_connector.step"
+	(model "${KIPRJMOD}/lib/models/Nintendo/snes_joypad_connector.step"
 		(offset
 			(xyz 8 -17 6)
 		)
