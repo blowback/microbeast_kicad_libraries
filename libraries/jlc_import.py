@@ -13,9 +13,11 @@ model path is "${KIPRJMOD}/../../libraries/models/<LIB>/<footprint>.step".
 Usage:
     ./jlc_import.py C42411119 RP2350B
     ./jlc_import.py C42411119 C42415655 RP2350B --dry-run
+    ./jlc_import.py C2297 RP2350B --description "Green LED, 0805"
 """
 
 import argparse
+import re
 import shutil
 import subprocess
 import sys
@@ -54,6 +56,42 @@ def fetch(parts, lib, workdir):
         sys.exit(f"JLC2KiCadLib failed with exit code {result.returncode}")
 
 
+def sexpr_str(text):
+    return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def set_description(path, text):
+    """Set the Description field of a JLC2KiCadLib symbol or footprint file.
+
+    Symbols get a Description property after the existing ones; footprints keep
+    their description in (descr ...), which KiCad shows as the Description field.
+    Returns False if the file wasn't in the expected format.
+    """
+    src = path.read_text()
+    value = sexpr_str(text)
+    if path.suffix == ".kicad_sym":
+        existing = re.search(r'^(    \(property "Description" )"(?:[^"\\]|\\.)*"', src, re.M)
+        if existing:
+            new = src[:existing.start()] + existing.group(1) + value + src[existing.end():]
+        else:
+            props = list(re.finditer(r'^    \(property .*\(id (\d+)\).*\n.*\n    \)\n', src, re.M))
+            if not props:
+                return False
+            next_id = max(int(m.group(1)) for m in props) + 1
+            block = (f'    (property "Description" {value} (id {next_id}) (at 0 0 0)\n'
+                     f'      (effects (font (size 1.27 1.27)) hide)\n'
+                     f'    )\n')
+            end = props[-1].end()
+            new = src[:end] + block + src[end:]
+    else:
+        new, n = re.subn(r'^(\s*\(descr )"(?:[^"\\]|\\.)*"', lambda m: m.group(1) + value,
+                         src, count=1, flags=re.M)
+        if n == 0:
+            return False
+    path.write_text(new)
+    return True
+
+
 def plan_moves(workdir, lib):
     """Map each downloaded file to its destination in the library."""
     dests = {
@@ -83,6 +121,8 @@ def main():
                     help="download and show where files would go, but change nothing")
     ap.add_argument("-f", "--force", action="store_true",
                     help="overwrite files that already exist in the library")
+    ap.add_argument("-d", "--description",
+                    help="set the Description field on the symbol and footprint")
     args = ap.parse_args()
 
     for p in args.parts:
@@ -90,6 +130,8 @@ def main():
             ap.error(f"{p!r} doesn't look like a JLCPCB part number (Cnnnn)")
     if "/" in args.lib or args.lib.startswith("."):
         ap.error(f"bad library name {args.lib!r}")
+    if args.description is not None and len(args.parts) > 1:
+        ap.error("--description applies to a single part; import parts one at a time")
 
     with tempfile.TemporaryDirectory(prefix="jlc_import_") as tmp:
         workdir = Path(tmp)
@@ -97,6 +139,12 @@ def main():
         moves = plan_moves(workdir, args.lib)
         if not moves:
             sys.exit("JLC2KiCadLib produced no files")
+
+        if args.description is not None:
+            for src, _ in moves:
+                if src.suffix in (".kicad_sym", ".kicad_mod"):
+                    if not set_description(src, args.description):
+                        print(f"  warning: couldn't set description in {src.name}")
 
         new_dirs = sorted({d.parent for _, d in moves if not d.parent.exists()})
         clashes = [d for _, d in moves if d.exists()]
