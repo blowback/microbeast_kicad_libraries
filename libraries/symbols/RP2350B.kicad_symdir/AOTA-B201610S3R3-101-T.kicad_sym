@@ -6,7 +6,7 @@
     (property "Value" "AOTA-B201610S3R3-101-T" (id 1) (at 0 -2.54 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T" (id 2) (at 0 -10.16 0)
+    (property "Footprint" "RP2350B:IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T" (id 2) (at 0 -10.16 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://item.szlcsc.com/datasheet/AOTA-B201610S3R3-101-T/44392932.html" (id 3) (at -2.286 0.127 0)

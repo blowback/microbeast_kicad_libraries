@@ -6,7 +6,7 @@
     (property "Value" "RP2350B_C42415655" (id 1) (at 0 -2.54 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:QFN-80_L10.0-W10.0-P0.40-TL-EP3.4" (id 2) (at 0 -10.16 0)
+    (property "Footprint" "RP2350B:QFN-80_L10.0-W10.0-P0.40-TL-EP3.4" (id 2) (at 0 -10.16 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://item.szlcsc.com/datasheet/RP2350B_C42415655/44413055.html" (id 3) (at -2.286 0.127 0)

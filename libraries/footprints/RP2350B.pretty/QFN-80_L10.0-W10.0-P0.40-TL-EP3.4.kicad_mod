@@ -1,4 +1,4 @@
-(module "QFN-80_L10.0-W10.0-P0.40-TL-EP3.4" (layer F.Cu) (tedit 6AC9FE56)
+(module "QFN-80_L10.0-W10.0-P0.40-TL-EP3.4" (layer F.Cu) (tedit 6ACA0CC7)
   (descr "QFN-80_L10.0-W10.0-P0.40-TL-EP3.4 footprint")
   (tags "QFN-80_L10.0-W10.0-P0.40-TL-EP3.4 footprint C42415655")
   (attr smd)
@@ -189,7 +189,7 @@
   (fp_text user ${REFERENCE} (at 0 0) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (model packages3d/QFN-80_L10.0-W10.0-P0.40-TL-EP3.4.step
+  (model "${KIPRJMOD}/../../libraries/models/RP2350B/QFN-80_L10.0-W10.0-P0.40-TL-EP3.4.step"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

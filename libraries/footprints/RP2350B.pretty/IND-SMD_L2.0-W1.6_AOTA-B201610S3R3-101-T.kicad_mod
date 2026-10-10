@@ -1,4 +1,4 @@
-(module "IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T" (layer F.Cu) (tedit 6ACA067A)
+(module "IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T" (layer F.Cu) (tedit 6ACA0CC6)
   (descr "IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T footprint")
   (tags "IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T footprint C42411119")
   (attr smd)
@@ -25,7 +25,7 @@
   (fp_text user ${REFERENCE} (at 0 0) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (model packages3d/IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T.step
+  (model "${KIPRJMOD}/../../libraries/models/RP2350B/IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T.step"
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
