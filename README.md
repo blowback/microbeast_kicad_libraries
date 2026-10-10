@@ -1,6 +1,6 @@
 # Reorganising Kicad 10 libs with git
 
-Goal: one central, git versioned repo of custom symbols, footprints, blocks templates, and reference designs.
+**Goal**: one central, git versioned repo of custom symbols, footprints, blocks templates, and reference designs.
 Previously: a mess of per-project stuff, global stuff, and no version control
 
 ## Re-org approach
@@ -50,31 +50,6 @@ Keep the nicknames. Schematics and PCBs refer to parts as MicroBeast:Foo and Nin
 
 rc2014-template already has the `meta/` folder, so it's a proper KiCad project template. Point Preferences → Configure Paths → KICAD_USER_TEMPLATE_DIR at `PCBs/templates` and it shows up in File → New Project from Template. That's a nicer way to start new cards than copying the folder around.
 
-## Throw away
-
-- `ul_SN74HCT125N/` and its zip. That's an Ultra Librarian import of a stock part: KiCad's own 74xx:74HCT125 symbol and Package_DIP:DIP-14_W7.62mm footprint cover it. Use those unless you had a specific reason for the UL version.
-- `rc2014-compat-master-rc2014-template.zip` : already unpacked
-- `MicroBeast.bak/`, every `*-backups/`, `fp-info-cache` and `*.kicad_prl`. The `.gitignore` covers all of these going forward.
-
-
-## Migration
-
-```
-cd ~/src/microbeast/PCBs
-mkdir -p libraries/{symbols,footprints,models/{MicroBeast,Nintendo},blocks} templates boards
-
-kicad-cli sym upgrade --force MicroBeast.kicad_sym -o libraries/symbols/MicroBeast.kicad_symdir/
-kicad-cli sym upgrade --force Nintendo.kicad_sym   -o libraries/symbols/Nintendo.kicad_symdir/
-git rm MicroBeast.kicad_sym Nintendo.kicad_sym
-
-git mv MicroBeast.pretty Nintendo.pretty libraries/footprints/
-git mv libraries/models/snes_joypad_connector.step libraries/models/Nintendo/
-git mv antdotorg_sheet.kicad_wks templates/
-git mv microbeast_proto_card boards/
-```
-
-
-Then fix each board's `sym-lib-table` / `fp-lib-table` and the model path in `SNES_Controller_Socket.kicad_mod`. Open each board and run ERC and DRC to check nothing is unresolved.
 
 ## .gitignore
 
@@ -88,7 +63,7 @@ The `.gitignore` in here can be used for new Kicad board repos.
 4. add this repo as a submodule:
 
 ```
-git submodule add git@github.com:blowback/beast-kicad-lib.git lib
+git submodule add git@github.com:blowback/microbeast_kicad_libraries.git lib
 git commit -m "Add KiCad library as submodule"
 ```
 
@@ -104,7 +79,7 @@ git clone --recurse-submodules ...
 git submodule update --init
 ```
 
-6. edit:
+# Editing stuff in the library
 
 ```
 cd lib
@@ -118,7 +93,7 @@ git commit -am "Bump lib"   # records the new library commit in the board repo
 
 Slightly complex, because `lib/` checks out a **specific commit**. Forget the `git switch main` and your changes are left on a detached HEAD. Forget the final `git commit` the board's repo still points at the old version.
 
-7. pulling library updates into a board: 
+# Pulling library updates into a board
 
 ```
 git submodule update --remote lib
