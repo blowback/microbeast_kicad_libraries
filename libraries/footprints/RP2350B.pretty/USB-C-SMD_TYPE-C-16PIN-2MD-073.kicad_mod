@@ -534,7 +534,7 @@
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/USB-C-SMD_TYPE-C-16PIN-2MD-073.step"
 		(offset
-			(xyz 0 -1.199997582 -0.8999981865)
+			(xyz 0 -1.199997582 1.68)
 		)
 		(scale
 			(xyz 1 1 1)
