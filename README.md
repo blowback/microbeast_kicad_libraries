@@ -34,15 +34,17 @@ PCBs/
 
 ## Library tables
 
-With every board at the same depth, each board's tables use one fixed prefix, and nothing absolute survives:
+Boards use this repo as a submodule called `lib`, sitting next to the board's `.kicad_pro` (see "Bootstrapping a new project" below). Every board's tables therefore use one fixed prefix, and nothing absolute survives:
 
 ```
-(uri "${KIPRJMOD}/../../libraries/footprints/MicroBeast.pretty")
+(uri "${KIPRJMOD}/lib/libraries/footprints/MicroBeast.pretty")
 ```
 
-The same goes for 3D model paths inside the footprints: `${KIPRJMOD}/../../libraries/models/Nintendo/snes_joypad_connector.step`. 
+The same goes for 3D model paths inside the footprints: `${KIPRJMOD}/lib/libraries/models/Nintendo/snes_joypad_connector.step`. 
 This needs no configuration on the Mac, WSL or in CI. 
-The one rule is that **boards always live exactly at `boards/<name>/` **. A path variable would remove that constraint, but then every machine and the CI job has to define it.
+The one rule is that **the submodule is always at `lib/`, next to the `.kicad_pro`**. A path variable would remove that constraint, but then every machine and the CI job has to define it.
+
+Boards kept inside this repo under `boards/<name>/` are not at that depth, so footprint 3D models will not resolve for them.
 
 Keep the nicknames. Schematics and PCBs refer to parts as MicroBeast:Foo and Nintendo:Bar. Existing boards only need their tables fixed; nothing inside the designs changes.
 

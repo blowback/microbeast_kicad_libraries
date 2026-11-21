@@ -318,7 +318,7 @@
 		(uuid "463c7f25-0b70-4456-a8b5-2c9839ec12ab")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../libraries/models/RP2350B/LED0805-RD.step"
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/LED0805-RD.step"
 		(offset
 			(xyz 0 0 0)
 		)

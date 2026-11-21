@@ -269,7 +269,7 @@
 		(uuid "3795acc6-19a3-471c-beaa-7a8f29fd48b0")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../libraries/models/RP2350B/CRYSTAL-SMD_4P-L3.2-W2.5-BL.step"
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/CRYSTAL-SMD_4P-L3.2-W2.5-BL.step"
 		(offset
 			(xyz 0 0 0)
 		)

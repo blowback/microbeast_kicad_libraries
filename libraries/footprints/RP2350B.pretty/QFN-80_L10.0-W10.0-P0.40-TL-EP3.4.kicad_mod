@@ -1686,7 +1686,7 @@
 		(uuid "3609a711-a608-4e6c-8444-7bcce25d15a8")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../libraries/models/RP2350B/QFN-80_L10.0-W10.0-P0.40-TL-EP3.4.step"
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/QFN-80_L10.0-W10.0-P0.40-TL-EP3.4.step"
 		(offset
 			(xyz 0 0 0)
 		)

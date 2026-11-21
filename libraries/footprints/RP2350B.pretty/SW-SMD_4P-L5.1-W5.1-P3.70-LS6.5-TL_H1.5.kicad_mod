@@ -418,7 +418,7 @@
 		(uuid "1bacbd14-e79c-4508-9635-6866e07268c4")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../libraries/models/RP2350B/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.step"
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.step"
 		(offset
 			(xyz 0 0 0)
 		)

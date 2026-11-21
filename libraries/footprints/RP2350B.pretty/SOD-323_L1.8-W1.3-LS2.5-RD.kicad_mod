@@ -296,7 +296,7 @@
 		(uuid "672c063d-4f64-4a42-a346-dba5bbec9cbc")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../../libraries/models/RP2350B/SOD-323_L1.8-W1.3-LS2.5-RD.step"
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/SOD-323_L1.8-W1.3-LS2.5-RD.step"
 		(offset
 			(xyz 0 -0.0001015999985 0)
 		)
