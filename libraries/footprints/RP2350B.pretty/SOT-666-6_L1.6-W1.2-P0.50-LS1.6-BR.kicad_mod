@@ -1,41 +1,290 @@
-(module "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR" (layer F.Cu) (tedit 6ACA1B79)
-  (descr "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR footprint")
-  (tags "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR footprint C15999")
-  (attr smd)
-  (fp_text reference REF** (at 0 -2.899975) (layer F.SilkS)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR (at 0 2.900025) (layer F.Fab)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_circle (center 0.800203 0.825044) (end 0.830201 0.825044) (layer Cmts.User) (width 0.059995))
-  (fp_circle (center 1.059944 0.509906) (end 1.16002 0.509906) (layer F.Fab) (width 0.2))
-  (fp_circle (center 0.976073 0.995022) (end 1.064973 0.995022) (layer F.SilkS) (width 0.2032))
-  (fp_line (start 0.649987 -0.899975) (end -0.650038 -0.899975) (layer F.SilkS) (width 0.150013))
-  (fp_line (start 0.649987 0.900025) (end -0.650038 0.900025) (layer F.SilkS) (width 0.150013))
-  (fp_line (start -1.43 -1.2) (end -1.43 1.2) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -1.43 1.2) (end 1.43 1.2) (layer F.CrtYd) (width 0.05))
-  (fp_line (start 1.43 1.2) (end 1.43 -1.2) (layer F.CrtYd) (width 0.05))
-  (fp_line (start 1.43 -1.2) (end -1.43 -1.2) (layer F.CrtYd) (width 0.05))
-  (pad 6 smd rect (at -0.724917 0.5 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (pad 5 smd rect (at -0.724917 0.000127 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (pad 4 smd rect (at -0.724917 -0.5 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (pad 3 smd rect (at 0.724917 -0.5 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (pad 2 smd rect (at 0.724917 0.000127 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (pad 1 smd rect (at 0.724917 0.5 90) (size 0.3 0.850013) (layers F.Cu F.Mask F.Paste))
-  (fp_poly (pts (xy -0.600025 0.825044) (xy -0.600025 -0.824968) (xy 0.599975 -0.824968) (xy 0.599975 0.825044)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy 0.530201 0.600025) (xy 0.530201 0.400025) (xy 0.800203 0.400025) (xy 0.800203 0.600025)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy 0.530201 0.100152) (xy 0.530201 -0.099848) (xy 0.800203 -0.099848) (xy 0.800203 0.100152)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy 0.530201 -0.399975) (xy 0.530201 -0.599975) (xy 0.800203 -0.599975) (xy 0.800203 -0.399975)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy -0.800254 -0.399721) (xy -0.800254 -0.599721) (xy -0.530251 -0.599721) (xy -0.530251 -0.399721)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy -0.800254 0.100152) (xy -0.800254 -0.099848) (xy -0.530251 -0.099848) (xy -0.530251 0.100152)) (layer Cmts.User) (width 0.15))
-  (fp_poly (pts (xy -0.800254 0.600025) (xy -0.800254 0.400025) (xy -0.530251 0.400025) (xy -0.530251 0.600025)) (layer Cmts.User) (width 0.15))
-  (fp_text user ${REFERENCE} (at 0 0.000025) (layer F.Fab)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (model "${KIPRJMOD}/../../libraries/models/RP2350B/SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR.step"
-    (at (xyz -0.000001 0.00118 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 -180))
-  )
+(footprint "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR footprint")
+	(tags "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR footprint C15999")
+	(property "Reference" "REF**"
+		(at 0 -2.899975 0)
+		(layer "F.SilkS")
+		(uuid "3a288eee-ace4-4155-9914-8d3d2b973c29")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR"
+		(at 0 2.900025 0)
+		(layer "F.Fab")
+		(uuid "5e5c4ab2-08bb-4df0-b265-ef642a7f409b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8d7f5e4d-b626-494b-8183-a491c980f216")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "533668a9-2718-4a67-8155-2f538ee042ae")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 0.649987 -0.899975)
+		(end -0.650038 -0.899975)
+		(stroke
+			(width 0.150013)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0e59c81c-76ac-4aca-b0e0-a1fd9236c760")
+	)
+	(fp_line
+		(start 0.649987 0.900025)
+		(end -0.650038 0.900025)
+		(stroke
+			(width 0.150013)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6bd790b2-29d9-4e0b-9e38-7ddee0ce7d6d")
+	)
+	(fp_circle
+		(center 0.976073 0.995022)
+		(end 1.064973 0.995022)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "0c05c5b9-38e1-4ea9-82d1-8a7859239c3e")
+	)
+	(fp_circle
+		(center 0.800203 0.825044)
+		(end 0.830201 0.825044)
+		(stroke
+			(width 0.059995)
+			(type solid)
+		)
+		(fill no)
+		(layer "Cmts.User")
+		(uuid "c8d902ca-fe23-48de-ace6-680db45add02")
+	)
+	(fp_poly
+		(pts
+			(xy -0.800254 -0.399721) (xy -0.800254 -0.599721) (xy -0.530251 -0.599721) (xy -0.530251 -0.399721)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "b369c086-ca70-4dff-8735-82ba1e85f215")
+	)
+	(fp_poly
+		(pts
+			(xy -0.800254 0.100152) (xy -0.800254 -0.099848) (xy -0.530251 -0.099848) (xy -0.530251 0.100152)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "b86178e0-2b9c-487e-a85d-88ceac7eb2c2")
+	)
+	(fp_poly
+		(pts
+			(xy -0.800254 0.600025) (xy -0.800254 0.400025) (xy -0.530251 0.400025) (xy -0.530251 0.600025)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "8d3fe72a-2dcd-41b6-bab1-54dca0ec4bd5")
+	)
+	(fp_poly
+		(pts
+			(xy -0.600025 0.825044) (xy -0.600025 -0.824968) (xy 0.599975 -0.824968) (xy 0.599975 0.825044)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "14321aa0-6598-4072-89b3-baa236af2d81")
+	)
+	(fp_poly
+		(pts
+			(xy 0.530201 -0.399975) (xy 0.530201 -0.599975) (xy 0.800203 -0.599975) (xy 0.800203 -0.399975)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "29f96eaa-4f7c-49c1-b099-bd5111d39a1b")
+	)
+	(fp_poly
+		(pts
+			(xy 0.530201 0.100152) (xy 0.530201 -0.099848) (xy 0.800203 -0.099848) (xy 0.800203 0.100152)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "7655ae51-8308-4adb-b247-31b36d311f7d")
+	)
+	(fp_poly
+		(pts
+			(xy 0.530201 0.600025) (xy 0.530201 0.400025) (xy 0.800203 0.400025) (xy 0.800203 0.600025)
+		)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "Cmts.User")
+		(uuid "5f9e0a13-935b-445e-8f3b-635d24722817")
+	)
+	(fp_line
+		(start -1.43 -1.2)
+		(end -1.43 1.2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "28a951a6-7c26-4b00-b9ee-43b0b4ffdf71")
+	)
+	(fp_line
+		(start -1.43 1.2)
+		(end 1.43 1.2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c489e9ac-60e2-473b-928e-fc9092b49374")
+	)
+	(fp_line
+		(start 1.43 -1.2)
+		(end -1.43 -1.2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "812f6c4b-7539-4037-ab00-dd5195d51a73")
+	)
+	(fp_line
+		(start 1.43 1.2)
+		(end 1.43 -1.2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6ed27e91-63d4-4845-9c06-ed77bc6e6474")
+	)
+	(fp_circle
+		(center 1.059944 0.509906)
+		(end 1.16002 0.509906)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e2d2c051-643f-4ec1-8be2-4f1e30b6e069")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0.000025 0)
+		(layer "F.Fab")
+		(uuid "f06e2547-86c7-407a-8977-3b84ef8a0f5a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at 0.724917 0.5 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c99c0ec4-350c-48c2-9372-1895f6b88dce")
+	)
+	(pad "2" smd rect
+		(at 0.724917 0.000127 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7e8e9169-b498-4138-9243-15ced4c80c44")
+	)
+	(pad "3" smd rect
+		(at 0.724917 -0.5 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6b13d5f2-a920-4826-96d4-9f51f3d8bf65")
+	)
+	(pad "4" smd rect
+		(at -0.724917 -0.5 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "dcadf946-cda5-467f-87ea-690e1b221091")
+	)
+	(pad "5" smd rect
+		(at -0.724917 0.000127 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "834d2499-0aac-43f9-930d-438747ce1936")
+	)
+	(pad "6" smd rect
+		(at -0.724917 0.5 90)
+		(size 0.3 0.850013)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7faae0f9-6ab2-4a39-b65a-523317751621")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../../libraries/models/RP2350B/SOT-666-6_L1.6-W1.2-P0.50-LS1.6-BR.step"
+		(offset
+			(xyz -0.0000253999996185 0.02997199955 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 -180)
+		)
+	)
 )
