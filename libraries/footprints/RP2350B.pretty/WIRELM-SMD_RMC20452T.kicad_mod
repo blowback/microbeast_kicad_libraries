@@ -499,4 +499,15 @@
 		(uuid "cd21d2e5-191c-49ad-a1cd-43a3261078fc")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/lib/libraries/models/RP2350B/RPI-RM2-RMC20452T.step"
+		(offset
+			(xyz 0 2.6 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
